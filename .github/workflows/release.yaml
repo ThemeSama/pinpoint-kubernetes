@@ -24,14 +24,6 @@ jobs:
         with:
           version: latest
 
-      - name: Copy chart files
-        run: |
-          mkdir helm
-          cp -r templates ./helm/
-          cp Chart.yaml ./helm/
-          cp README.md ./helm/
-          cp values.yaml ./helm/
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@a917fd15b20e8b64b94d9158ad54cd6345335584 # v1.6.0
         with:
